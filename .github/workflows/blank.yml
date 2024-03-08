@@ -2,7 +2,7 @@ name: Sync Repository
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # 每天 UTC 时间 0 点同步
+    - cron: "*/5 * * * *"
 
 jobs:
   sync:
