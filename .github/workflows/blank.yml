@@ -1,0 +1,18 @@
+name: Sync Repository
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # 每天 UTC 时间 0 点同步
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Sync Repository
+        run: |
+          git remote add upstream https://github.com/qbox/titan
+          git pull upstream main
